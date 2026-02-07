@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Cho Em ❤️</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&family=Comic+Neue:wght@700&family=Fredoka+One&family=Chewy&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        body {
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            font-family: 'Fredoka One', 'Poppins', cursive;
+            background: #000;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="%23ff3366" d="M16 3.5c-4.5 0-8 3.6-8 8 0 4.5 8 12.5 8 12.5s8-8 8-12.5c0-4.4-3.5-8-8-8z"/></svg>') 16 16, auto;
+        }
+
+        /* ===== NỀN MÀU HỒNG ĐƠN SẮC ===== */
+        .pink-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(
+                135deg,
+                #ffccd5 0%,
+                #ffafcc 20%,
+                #ff8fab 40%,
+                #ff7595 60%,
+                #ff4d6d 80%,
+                #c9184a 100%
+            );
+        }
+
+        /* ===== LOADER ===== */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff4d6d, #ff8fa3, #ffb3c6);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 1s, visibility 1s;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .heart-loader {
+            font-size: 5rem;
+            color: white;
+            animation: heartbeat 1.5s infinite, rotate 3s linear infinite;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+        }
+
+        /* ===== MÀN HÌNH ===== */
+        .screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1.2s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                        visibility 1.2s cubic-bezier(0.215, 0.610, 0.355, 1);
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .screen.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ===== MÀN HÌNH 1 ===== */
+        #screen1 {
+            background: linear-gradient(
+                135deg,
+                #ffccd5 0%,
+                #ffafcc 25%,
+                #ff8fab 50%,
+                #ff7595 75%,
+                #ff4d6d 100%
+            );
+        }
+
+        .love-text {
+            font-family: 'Chewy', 'Comic Neue', cursive;
+            font-size: 5rem;
+            color: white;
+            text-shadow: 
+                0 0 30px rgba(255, 77, 109, 0.9),
+                0 0 60px rgba(255, 77, 109, 0.7),
+                0 0 100px rgba(255, 77, 109, 0.5);
+            margin-bottom: 30px;
+            animation: heartbeat 1.5s infinite;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        /* BỐ CỤC ĐÚNG THEO HÌNH ẢNH */
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .instruction-text {
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.8rem;
+            color: white;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 15px 30px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        .instruction-text strong {
+            font-size: 2.2rem;
+            color: #ffcc00;
+            text-shadow: 0 0 10px #ffcc00;
+        }
+
+        .hint-text {
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.5rem;
+            color: white;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            animation: fadeInOut 3s infinite;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        /* ===== HỘP QUÀ ===== */
+        .gift-container {
+            position: relative;
+            cursor: pointer;
+            animation: float 4s ease-in-out infinite;
+            margin: 20px 0;
+        }
+
+        .gift-box {
+            width: 220px;
+            height: 220px;
+            background: linear-gradient(135deg, #ff3366, #ff6699, #ff99cc);
+            border-radius: 20px;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 
+                0 25px 50px rgba(255, 77, 109, 0.6),
+                0 0 80px rgba(255, 77, 109, 0.4),
+                inset 0 -15px 30px rgba(0, 0, 0, 0.2),
+                inset 0 15px 30px rgba(255, 255, 255, 0.4);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .gift-lid {
+            position: absolute;
+            width: 240px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff0040, #ff3366, #ff6699);
+            top: -55px;
+            left: -10px;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 
+                0 15px 30px rgba(0, 0, 0, 0.3),
+                inset 0 -8px 15px rgba(0, 0, 0, 0.2),
+                inset 0 8px 15px rgba(255, 255, 255, 0.3);
+            transform-origin: center bottom;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .gift-lid::before {
+            content: '🎁';
+            position: absolute;
+            font-size: 3rem;
+            top: -35px;
+            animation: bounce 2s infinite;
+            filter: drop-shadow(0 0 10px #ffcc00);
+        }
+
+        .gift-lid::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #ffcc00, #ff99cc, #ffcc00);
+            bottom: 0;
+            left: 0;
+        }
+
+        .gift-container.open .gift-lid {
+            transform: rotateX(-180deg) translateY(25px);
+        }
+
+        .gift-ribbon {
+            position: absolute;
+            width: 50px;
+            height: 100%;
+            background: linear-gradient(to bottom, #ff99cc, #ff6699, #ff3366, #ff99cc);
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 8px;
+            box-shadow: 
+                0 0 20px rgba(255, 153, 204, 0.8),
+                inset 0 0 12px rgba(255, 255, 255, 0.4);
+            z-index: 1;
+        }
+
+        .gift-bow {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ff0066, #ff3366, #ff6699);
+            border-radius: 50%;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 4;
+            box-shadow: 
+                0 12px 25px rgba(0, 0, 0, 0.25),
+                inset 0 0 15px rgba(255, 255, 255, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.2rem;
+            color: white;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+            animation: pulse 1.5s infinite;
+        }
+
+        .gift-box:hover {
+            transform: scale(1.1) rotateX(10deg) rotateY(10deg);
+            box-shadow: 
+                0 35px 70px rgba(255, 77, 109, 0.8),
+                0 0 120px rgba(255, 77, 109, 0.6),
+                inset 0 -15px 30px rgba(0, 0, 0, 0.2),
+                inset 0 15px 30px rgba(255, 255, 255, 0.5);
+        }
+
+        /* ===== MÀN HÌNH 2 ===== */
+        #screen2 {
+            background: linear-gradient(
+                135deg,
+                #ffccd5 0%,
+                #ffafcc 25%,
+                #ff8fab 50%,
+                #ff7595 75%,
+                #ff4d6d 100%
+            );
+        }
+
+        .valentine-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 35px;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.25),
+                inset 0 0 80px rgba(255, 255, 255, 0.15),
+                0 0 100px rgba(255, 77, 109, 0.4);
+            text-shadow: 
+                0 0 25px rgba(255, 77, 109, 0.9),
+                0 0 50px rgba(255, 77, 109, 0.7);
+            animation: glow 2s infinite alternate;
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            max-width: 800px;
+            margin: 0 20px;
+        }
+
+        .countdown-2 {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            color: white;
+            font-size: 1.6rem;
+            background: rgba(255, 77, 109, 0.7);
+            padding: 15px 30px;
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            animation: pulse 1.5s infinite;
+            font-family: 'Fredoka One', cursive;
+        }
+
+        /* ===== MÀN HÌNH 3 ===== */
+        #screen3 {
+            background: linear-gradient(
+                135deg,
+                #ffccd5 0%,
+                #ffafcc 25%,
+                #ff8fab 50%,
+                #ff7595 75%,
+                #ff4d6d 100%
+            );
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 
+                0 0 25px rgba(255, 255, 255, 0.9),
+                0 0 50px rgba(255, 255, 255, 0.6);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .calendar-container {
+            width: 95%;
+            max-width: 900px;
+            height: 500px;
+            perspective: 1500px;
+            position: relative;
+            animation: fadeInUp 1s ease-out 0.3s both;
+            margin-bottom: 20px;
+        }
+
+        .calendar-page {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #ffffff, #fff5f7);
+            border-radius: 25px;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.2),
+                0 0 80px rgba(255, 77, 109, 0.2),
+                inset 0 0 30px rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+            border: 3px solid rgba(255, 255, 255, 0.6);
+            overflow: hidden;
+        }
+
+        .calendar-page.active {
+            display: flex;
+            animation: pageAppear 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .page-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .big-love-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            background: linear-gradient(45deg, #c9184a, #ff4d6d, #ff8fa3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(201, 24, 74, 0.3);
+            animation: heartbeat 1.5s infinite;
+        }
+
+        /* ===== HIỆU ỨNG ===== */
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 20px rgba(255, 77, 109, 0.5); }
+            100% { box-shadow: 0 0 40px rgba(255, 77, 109, 0.8); }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pageAppear {
+            0% { opacity: 0; transform: translateY(30px) scale(0.9); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* Transition overlay */
+        .transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff4d6d, #ff8fa3, #ffb3c6);
+            z-index: 999;
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        .transition-overlay.active {
+            transform: scaleY(1);
+            transform-origin: top;
+        }
+
+        /* Explosion effect */
+        .explosion-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+            opacity: 0;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        @keyframes particleExplode {
+            0% { opacity: 1; transform: translate(0, 0) scale(1); }
+            100% { opacity: 0; transform: translate(calc(var(--tx) * 100px), calc(var(--ty) * 100px)) scale(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .love-text {
+                font-size: 3.5rem;
+            }
+            
+            .instruction-text {
+                font-size: 1.5rem;
+            }
+            
+            .instruction-text strong {
+                font-size: 1.8rem;
+            }
+            
+            .gift-box {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .gift-lid {
+                width: 200px;
+                height: 45px;
+                top: -50px;
+            }
+            
+            .gift-bow {
+                width: 60px;
+                height: 60px;
+                top: -30px;
+                font-size: 1.8rem;
+            }
+            
+            .valentine-text {
+                font-size: 3.5rem;
+                padding: 30px;
+            }
+            
+            .countdown-2 {
+                bottom: 30px;
+                right: 30px;
+                font-size: 1.4rem;
+                padding: 12px 25px;
+            }
+            
+            .title {
+                font-size: 3.2rem;
+            }
+            
+            .big-love-text {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .love-text {
+                font-size: 2.8rem;
+            }
+            
+            .instruction-text {
+                font-size: 1.2rem;
+                padding: 12px 20px;
+            }
+            
+            .instruction-text strong {
+                font-size: 1.5rem;
+            }
+            
+            .hint-text {
+                font-size: 1.2rem;
+            }
+            
+            .gift-box {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .gift-lid {
+                width: 180px;
+                height: 40px;
+                top: -45px;
+            }
+            
+            .valentine-text {
+                font-size: 2.8rem;
+                padding: 20px;
+            }
+            
+            .countdown-2 {
+                font-size: 1.2rem;
+                padding: 10px 20px;
+            }
+            
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .calendar-container {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NỀN MÀU HỒNG -->
+    <div class="pink-background"></div>
+    
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="heart-loader">💝</div>
+        <div class="loader-text">Đang chuẩn bị yêu thương cho em...</div>
+        <div style="margin-top: 20px; font-size: 1.8rem; color: white; opacity: 0.7; animation: pulse 2s infinite;">
+            💖 🌹 ✨ 🎀
+        </div>
+    </div>
+
+    <!-- Hiệu ứng chuyển màn hình -->
+    <div class="transition-overlay" id="transitionOverlay"></div>
+
+    <!-- Hiệu ứng nổ -->
+    <div class="explosion-container" id="explosionContainer"></div>
+
+    <!-- ===== MÀN HÌNH 1 ===== -->
+    <div class="screen active" id="screen1">
+        <div class="main-container">
+            <h1 class="love-text">Anh Yêu Em</h1>
+            
+            <div class="instruction-text">
+                <strong>VÀO HỘP QUÀ</strong><br>
+                ĐỂ MỞ YÊU THƯƠNG
+            </div>
+            
+            <div class="gift-container" id="giftContainer">
+                <div class="gift-bow">❤️</div>
+                <div class="gift-box" id="giftBox">
+                    <div class="gift-ribbon"></div>
+                    <div class="gift-lid"></div>
+                </div>
+            </div>
+            
+            <div class="hint-text">
+                Hộp quà tình yêu này em nhé! 🥰
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MÀN HÌNH 2 ===== -->
+    <div class="screen" id="screen2">
+        <div style="text-align: center; padding: 20px;">
+            <h1 class="valentine-text">Chúc Valentine Anh Yêu Em ❤️</h1>
+            <div style="margin-top: 40px; font-size: 3rem; color: white; animation: pulse 2s infinite;">
+                🌹💝🎀✨❤️
+            </div>
+            <div class="countdown-2" id="countdown2">🎀 Chuyển trang sau: 3 giây 🎀</div>
+        </div>
+    </div>
+
+    <!-- ===== MÀN HÌNH 3 ===== -->
+    <div class="screen" id="screen3">
+        <h1 class="title">Gửi Em Bé Của Anh 💌</h1>
+        
+        <div class="calendar-container" id="calendarContainer">
+            <div class="calendar-page active" id="page1">
+                <div class="page-content">
+                    <h2 class="big-love-text">Anh Yêu Em</h2>
+                    <div style="font-size: 1.8rem; color: #590d22; margin-top: 20px;">
+                        Trang đầu tiên của hành trình yêu thương chúng mình
+                    </div>
+                    <div style="margin-top: 30px; font-size: 3rem; color: #ff4d6d;">
+                        💕🌸🎉✨
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="color: white; font-size: 1.5rem; font-family: 'Comic Neue', cursive; text-align: center; margin-top: 20px;">
+            "Yêu là khi mỗi ngày đều là Valentine 💖"
+        </div>
+    </div>
+
+    <script>
+        // ===== BIẾN TOÀN CỤC =====
+        let isTransitioning = false;
+        let countdownInterval = null;
+
+        // ===== MỞ HỘP QUÀ =====
+        function openGift() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            
+            const giftContainer = document.getElementById('giftContainer');
+            const rect = giftContainer.getBoundingClientRect();
+            const x = rect.left + rect.width / 2;
+            const y = rect.top + rect.height / 2;
+            
+            // Hiệu ứng mở nắp hộp
+            giftContainer.classList.add('open');
+            
+            // Tạo hiệu ứng nổ
+            createExplosion(x, y);
+            
+            // Phát âm thanh
+            playOpenSound();
+            
+            // Chuyển sang màn hình 2 sau 1.5 giây
+            setTimeout(() => {
+                transitionToScreen(2);
+                isTransitioning = false;
+            }, 1500);
+        }
+
+        // ===== TẠO HIỆU ỨNG NỔ =====
+        function createExplosion(x, y) {
+            const explosionContainer = document.getElementById('explosionContainer');
+            explosionContainer.innerHTML = '';
+            explosionContainer.style.opacity = '1';
+            
+            const particleCount = 100;
+            const pinkColors = ['#ffccd5', '#ffafcc', '#ff8fab', '#ff7595', '#ff4d6d', '#c9184a', '#ff3366'];
+            const shapes = ['❤️', '💖', '💗', '✨', '🌟', '🎀', '🎁', '🌹'];
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random hình dạng
+                if (Math.random() > 0.5) {
+                    // Emoji
+                    particle.innerHTML = shapes[Math.floor(Math.random() * shapes.length)];
+                    const color = pinkColors[Math.floor(Math.random() * pinkColors.length)];
+                    particle.style.color = color;
+                    particle.style.textShadow = `0 0 12px ${color}`;
+                    particle.style.fontSize = `${Math.random() * 18 + 12}px`;
+                } else {
+                    // Hình tròn
+                    const color = pinkColors[Math.floor(Math.random() * pinkColors.length)];
+                    particle.style.backgroundColor = color;
+                    particle.style.boxShadow = `0 0 20px ${color}`;
+                    particle.style.borderRadius = '50%';
+                    const size = Math.random() * 15 + 6;
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                }
+                
+                // Vị trí ban đầu
+                particle.style.left = `${x}px`;
+                particle.style.top = `${y}px`;
+                
+                explosionContainer.appendChild(particle);
+                
+                // Animation
+                const tx = Math.random() * 2 - 1;
+                const ty = Math.random() * 2 - 1;
+                const duration = Math.random() * 700 + 400;
+                
+                particle.style.setProperty('--tx', tx);
+                particle.style.setProperty('--ty', ty);
+                particle.style.animation = `particleExplode ${duration}ms ease-out forwards`;
+            }
+            
+            // Ẩn explosion sau 1.2 giây
+            setTimeout(() => {
+                explosionContainer.style.opacity = '0';
+            }, 1200);
+        }
+
+        // ===== ÂM THANH =====
+        function playOpenSound() {
+            try {
+                const context = new (window.AudioContext || window.webkitAudioContext)();
+                
+                const oscillator1 = context.createOscillator();
+                const gainNode1 = context.createGain();
+                oscillator1.connect(gainNode1);
+                gainNode1.connect(context.destination);
+                
+                oscillator1.frequency.setValueAtTime(800, context.currentTime);
+                oscillator1.frequency.exponentialRampToValueAtTime(1200, context.currentTime + 0.2);
+                oscillator1.type = 'sine';
+                
+                gainNode1.gain.setValueAtTime(0.08, context.currentTime);
+                gainNode1.gain.exponentialRampToValueAtTime(0.01, context.currentTime + 0.3);
+                
+                oscillator1.start(context.currentTime);
+                oscillator1.stop(context.currentTime + 0.3);
+            } catch (e) {
+                console.log("Không thể phát âm thanh");
+            }
+        }
+
+        // ===== CHUYỂN MÀN HÌNH =====
+        function transitionToScreen(screenNumber) {
+            if (isTransitioning && screenNumber !== 3) return;
+            
+            // Dừng đếm ngược cũ nếu có
+            if (countdownInterval) {
+                clearInterval(countdownInterval);
+                countdownInterval = null;
+            }
+            
+            const transitionOverlay = document.getElementById('transitionOverlay');
+            
+            // Hiển thị overlay chuyển tiếp
+            transitionOverlay.classList.add('active');
+            
+            setTimeout(() => {
+                // Ẩn tất cả màn hình
+                const screens = document.querySelectorAll('.screen');
+                screens.forEach(screen => {
+                    screen.classList.remove('active');
+                });
+                
+                // Hiển thị màn hình mới
+                const nextScreen = document.getElementById(`screen${screenNumber}`);
+                if (nextScreen) {
+                    nextScreen.classList.add('active');
+                    
+                    // Nếu là màn hình 2, bắt đầu đếm ngược
+                    if (screenNumber === 2) {
+                        setTimeout(() => {
+                            startCountdown();
+                        }, 300);
+                    }
+                }
+                
+                // Ẩn overlay chuyển tiếp
+                setTimeout(() => {
+                    transitionOverlay.classList.remove('active');
+                }, 800);
+            }, 800);
+        }
+
+        // ===== ĐẾM NGƯỢC TỪ MÀN 2 SANG 3 =====
+        function startCountdown() {
+            let countdown = 3;
+            const countdownElement = document.getElementById('countdown2');
+            
+            countdownInterval = setInterval(() => {
+                const icons = ['💝', '🎀', '💖', '🎁', '💕', '🌹', '✨'];
+                const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+                countdownElement.innerHTML = `${randomIcon} Chuyển trang sau: ${countdown} giây ${randomIcon}`;
+                countdown--;
+                
+                if (countdown < 0) {
+                    clearInterval(countdownInterval);
+                    countdownInterval = null;
+                    countdownElement.innerHTML = "🎀 Đang chuyển... 🎀";
+                    
+                    // CHUYỂN SANG MÀN HÌNH 3 SAU 1 GIÂY
+                    setTimeout(() => {
+                        transitionToScreen(3);
+                    }, 1000);
+                }
+            }, 1000);
+        }
+
+        // ===== KHỞI TẠO =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ẩn loader sau 2 giây
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+                
+                // Hiệu ứng xuất hiện cho màn hình 1
+                setTimeout(() => {
+                    document.getElementById('screen1').style.opacity = '1';
+                }, 300);
+            }, 2000);
+            
+            // Xử lý click vào hộp quà - chỉ gắn một lần
+            const giftContainer = document.getElementById('giftContainer');
+            let hasClickListener = false;
+            
+            function attachClickEvent() {
+                if (!hasClickListener) {
+                    giftContainer.addEventListener('click', openGift, { once: true });
+                    hasClickListener = true;
+                }
+            }
+            
+            attachClickEvent();
+            
+            // Thêm hiệu ứng hover
+            giftContainer.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+            
+            giftContainer.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+            
+            // Nếu người dùng click nhiều lần, chỉ xử lý một lần
+            giftContainer.addEventListener('click', function(e) {
+                e.stopPropagation();
+                e.preventDefault();
+            });
+        });
+    </script>
+</body>
+</html>
