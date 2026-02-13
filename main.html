@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@700&family=Comic+Neue:wght@400;700&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -59,23 +61,91 @@
             z-index: 5;
         }
 
-        .tulip:nth-child(1) { left: 5%; animation-delay: 0s; font-size: 1.5rem; }
-        .tulip:nth-child(2) { left: 15%; animation-delay: 2s; font-size: 1.8rem; }
-        .tulip:nth-child(3) { left: 25%; animation-delay: 4s; font-size: 1.6rem; }
-        .tulip:nth-child(4) { left: 35%; animation-delay: 1s; font-size: 2rem; }
-        .tulip:nth-child(5) { left: 45%; animation-delay: 3s; font-size: 1.5rem; }
-        .tulip:nth-child(6) { left: 55%; animation-delay: 5s; font-size: 1.7rem; }
-        .tulip:nth-child(7) { left: 65%; animation-delay: 0.5s; font-size: 1.8rem; }
-        .tulip:nth-child(8) { left: 75%; animation-delay: 2.5s; font-size: 1.6rem; }
-        .tulip:nth-child(9) { left: 85%; animation-delay: 3.5s; font-size: 2rem; }
-        .tulip:nth-child(10) { left: 95%; animation-delay: 1.5s; font-size: 1.5rem; }
+        .tulip:nth-child(1) {
+            left: 5%;
+            animation-delay: 0s;
+            font-size: 1.5rem;
+        }
+
+        .tulip:nth-child(2) {
+            left: 15%;
+            animation-delay: 2s;
+            font-size: 1.8rem;
+        }
+
+        .tulip:nth-child(3) {
+            left: 25%;
+            animation-delay: 4s;
+            font-size: 1.6rem;
+        }
+
+        .tulip:nth-child(4) {
+            left: 35%;
+            animation-delay: 1s;
+            font-size: 2rem;
+        }
+
+        .tulip:nth-child(5) {
+            left: 45%;
+            animation-delay: 3s;
+            font-size: 1.5rem;
+        }
+
+        .tulip:nth-child(6) {
+            left: 55%;
+            animation-delay: 5s;
+            font-size: 1.7rem;
+        }
+
+        .tulip:nth-child(7) {
+            left: 65%;
+            animation-delay: 0.5s;
+            font-size: 1.8rem;
+        }
+
+        .tulip:nth-child(8) {
+            left: 75%;
+            animation-delay: 2.5s;
+            font-size: 1.6rem;
+        }
+
+        .tulip:nth-child(9) {
+            left: 85%;
+            animation-delay: 3.5s;
+            font-size: 2rem;
+        }
+
+        .tulip:nth-child(10) {
+            left: 95%;
+            animation-delay: 1.5s;
+            font-size: 1.5rem;
+        }
 
         @keyframes tulipFloat {
-            0% { top: -10%; opacity: 0; transform: rotate(0deg) translateX(0); }
-            10% { opacity: 0.8; }
-            50% { opacity: 0.9; transform: rotate(180deg) translateX(50px); }
-            90% { opacity: 0.6; }
-            100% { top: 110%; opacity: 0; transform: rotate(360deg) translateX(-50px); }
+            0% {
+                top: -10%;
+                opacity: 0;
+                transform: rotate(0deg) translateX(0);
+            }
+
+            10% {
+                opacity: 0.8;
+            }
+
+            50% {
+                opacity: 0.9;
+                transform: rotate(180deg) translateX(50px);
+            }
+
+            90% {
+                opacity: 0.6;
+            }
+
+            100% {
+                top: 110%;
+                opacity: 0;
+                transform: rotate(360deg) translateX(-50px);
+            }
         }
 
         /* ===== TRANG TRÍ HOA TULIP CỐ ĐỊNH ===== */
@@ -90,14 +160,44 @@
             opacity: 0.6;
         }
 
-        .tulip-decoration-left { left: 10px; bottom: 10px; font-size: 2rem; transform: rotate(-15deg); }
-        .tulip-decoration-right { right: 10px; top: 10px; font-size: 2rem; transform: rotate(15deg); }
-        .tulip-decoration-top-left { left: 20px; top: 20px; font-size: 1.8rem; transform: rotate(-20deg); }
-        .tulip-decoration-bottom-right { right: 20px; bottom: 20px; font-size: 1.8rem; transform: rotate(20deg); }
+        .tulip-decoration-left {
+            left: 10px;
+            bottom: 10px;
+            font-size: 2rem;
+            transform: rotate(-15deg);
+        }
+
+        .tulip-decoration-right {
+            right: 10px;
+            top: 10px;
+            font-size: 2rem;
+            transform: rotate(15deg);
+        }
+
+        .tulip-decoration-top-left {
+            left: 20px;
+            top: 20px;
+            font-size: 1.8rem;
+            transform: rotate(-20deg);
+        }
+
+        .tulip-decoration-bottom-right {
+            right: 20px;
+            bottom: 20px;
+            font-size: 1.8rem;
+            transform: rotate(20deg);
+        }
 
         @keyframes tulipSway {
-            0%, 100% { transform: rotate(-5deg) translateY(0); }
-            50% { transform: rotate(5deg) translateY(-10px); }
+
+            0%,
+            100% {
+                transform: rotate(-5deg) translateY(0);
+            }
+
+            50% {
+                transform: rotate(5deg) translateY(-10px);
+            }
         }
 
         /* ===== LOADER ===== */
@@ -472,8 +572,15 @@
 
         /* ===== HIỆU ỨNG ===== */
         @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
         }
 
         /* Transition overlay */
@@ -497,11 +604,34 @@
 
         /* Responsive cho iPhone nhỏ */
         @media (max-width: 375px) {
-            .title { font-size: 1.8rem; }
-            .big-love-text { font-size: 1.8rem; }
-            .calendar-container { height: 420px; }
-            .page-message { font-size: 0.85rem; padding: 12px; }
-            .love-message { font-size: 2rem; }
+            .title {
+                font-size: 1.8rem;
+            }
+
+            .big-love-text {
+                font-size: 1.8rem;
+            }
+
+            .calendar-container {
+                height: 420px;
+            }
+
+            .page-message {
+                font-size: 0.85rem;
+                padding: 12px;
+            }
+
+            .love-message {
+                font-size: 2rem;
+            }
+
+            .question-item p {
+                font-size: 0.85rem;
+            }
+
+            .question-item textarea {
+                height: 55px;
+            }
         }
     </style>
 </head>
@@ -511,9 +641,16 @@
 
     <!-- HOA TULIP BAY -->
     <div class="tulip-container">
-        <div class="tulip">🌷</div><div class="tulip">🌷</div><div class="tulip">🌷</div><div class="tulip">🌷</div>
-        <div class="tulip">🌷</div><div class="tulip">🌷</div><div class="tulip">🌷</div><div class="tulip">🌷</div>
-        <div class="tulip">🌷</div><div class="tulip">🌷</div>
+        <div class="tulip">🌷</div>
+        <div class="tulip">🌷</div>
+        <div class="tulip">🌷</div>
+        <div class="tulip">🌷</div>
+        <div class="tulip">🌷</div>
+        <div class="tulip">🌷</div>
+        <div class="tulip">🌷</div>
+        <div class="tulip">🌷</div>
+        <div class="tulip">🌷</div>
+        <div class="tulip">🌷</div>
     </div>
 
     <!-- TRANG TRÍ HOA TULIP CỐ ĐỊNH -->
@@ -534,7 +671,7 @@
     <!-- MÀN HÌNH 2 -->
     <div class="screen active" id="screen2">
         <div style="text-align: center; width: 100%;">
-            <h1 class="valentine-text">Chúc Valentine<br>hạnh phúc bên anh ❤️</h1>
+            <h1 class="valentine-text">Chúc Valentine<br>Anh Yêu Em ❤️</h1>
             <div style="margin-top: 30px; font-size: 2.5rem; color: white;">🌷 💝 🌷</div>
             <div class="countdown-2" id="countdown2">🌷 3s 🌷</div>
         </div>
@@ -598,13 +735,14 @@
             <div class="calendar-page" id="page5">
                 <div class="form-container">
                     <h2 class="form-title">💌 Lời nhắn của em</h2>
-                    <textarea class="message-input" id="messageInput" placeholder="Em muốn nói gì với anh? ..."></textarea>
+                    <textarea class="message-input" id="messageInput"
+                        placeholder="Em muốn nói gì với anh? ..."></textarea>
                     <button class="send-btn" id="sendBtn">GỬI</button>
-                    <div class="success-message" id="successMessage">Anh nhận được òi!</div>
+                    <div class="success-message" id="successMessage">Đã gửi thành công!</div>
                 </div>
             </div>
 
-            <!-- Trang 6 - Câu hỏi -->
+            <!-- Trang 6 - Câu hỏi (7 câu) -->
             <div class="calendar-page" id="page6">
                 <div class="page-content">
                     <h2 class="big-love-text" style="font-size: 1.8rem;">💝 Câu hỏi cho em</h2>
@@ -614,7 +752,7 @@
                             <textarea id="answer1" placeholder="Câu trả lời..."></textarea>
                         </div>
                         <div class="question-item">
-                            <p>2. Khoảng thời gian nào em thấy mình yêu anh nhất, chỉ cần thấy anh là em vui ý</p>
+                            <p>2. Khoảng thời gian nào em thấy yêu anh nhất?</p>
                             <textarea id="answer2" placeholder="Câu trả lời..."></textarea>
                         </div>
                         <div class="question-item">
@@ -626,12 +764,16 @@
                             <textarea id="answer4" placeholder="Câu trả lời..."></textarea>
                         </div>
                         <div class="question-item">
-                            <p>5. Anh muốn 2 ta có 1 quy tắc gì đó kiểu " khi cả 2 đồng ý mới ctay"(vd thôi nha chứ anh k muốn kiểu vậy)</p>
+                            <p>5. Em nghĩ sao về quy tắc "cả 2 đồng ý mới chia tay"?</p>
                             <textarea id="answer5" placeholder="Câu trả lời..."></textarea>
                         </div>
                         <div class="question-item">
                             <p>6. Em kể với mọi người về anh như thế nào?</p>
                             <textarea id="answer6" placeholder="Câu trả lời..."></textarea>
+                        </div>
+                        <div class="question-item">
+                            <p>7. Son anh tặng em dùng có tốt không? Em thích màu nào nhất?</p>
+                            <textarea id="answer7" placeholder="Câu trả lời..."></textarea>
                         </div>
                     </div>
                     <button class="send-btn" id="sendAnswersBtn">GỬI LỜI ĐÁP</button>
@@ -741,21 +883,21 @@
                 message: message,
                 date: new Date().toLocaleDateString('vi-VN')
             })
-            .then(() => {
-                successMessage.innerHTML = '🌷 Gửi thành công!';
-                document.getElementById('messageInput').value = '';
-                setTimeout(() => successMessage.style.display = 'none', 3000);
-            })
-            .catch(error => {
-                successMessage.innerHTML = '❌ Gửi thất bại!';
-                console.error(error);
-                setTimeout(() => successMessage.style.display = 'none', 3000);
-            });
+                .then(() => {
+                    successMessage.innerHTML = '🌷 Gửi thành công!';
+                    document.getElementById('messageInput').value = '';
+                    setTimeout(() => successMessage.style.display = 'none', 3000);
+                })
+                .catch(error => {
+                    successMessage.innerHTML = '❌ Gửi thất bại!';
+                    console.error(error);
+                    setTimeout(() => successMessage.style.display = 'none', 3000);
+                });
         }
 
         function sendAnswers() {
             const answers = [];
-            for (let i = 1; i <= 6; i++) {
+            for (let i = 1; i <= 7; i++) {
                 const answer = document.getElementById(`answer${i}`)?.value.trim();
                 if (!answer) {
                     alert('💝 Trả lời hết câu hỏi nhé!');
@@ -774,11 +916,12 @@
                 '3. Điều ngạc nhiên ở anh?',
                 '4. Muốn làm gì khi gặp anh?',
                 '5. Quy tắc chia tay?',
-                '6. Kể về anh với mọi người?'
+                '6. Kể về anh với mọi người?',
+                '7. Son anh tặng dùng tốt không? Thích màu nào?'
             ];
 
             let fullMessage = '';
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < 7; i++) {
                 fullMessage += `${questions[i]}\nTrả lời: ${answers[i]}\n\n---\n\n`;
             }
 
@@ -786,18 +929,18 @@
                 message: fullMessage,
                 date: new Date().toLocaleDateString('vi-VN')
             })
-            .then(() => {
-                successMessage.innerHTML = '🌷 Gửi thành công!';
-                for (let i = 1; i <= 6; i++) {
-                    document.getElementById(`answer${i}`).value = '';
-                }
-                setTimeout(() => successMessage.style.display = 'none', 3000);
-            })
-            .catch(error => {
-                successMessage.innerHTML = '❌ Gửi thất bại!';
-                console.error(error);
-                setTimeout(() => successMessage.style.display = 'none', 3000);
-            });
+                .then(() => {
+                    successMessage.innerHTML = '🌷 Gửi thành công!';
+                    for (let i = 1; i <= 7; i++) {
+                        document.getElementById(`answer${i}`).value = '';
+                    }
+                    setTimeout(() => successMessage.style.display = 'none', 3000);
+                })
+                .catch(error => {
+                    successMessage.innerHTML = '❌ Gửi thất bại!';
+                    console.error(error);
+                    setTimeout(() => successMessage.style.display = 'none', 3000);
+                });
         }
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -818,4 +961,5 @@
         });
     </script>
 </body>
+
 </html>
