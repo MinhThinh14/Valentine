@@ -3,29 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Valentine Cho Em ❤️</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&family=Comic+Neue:wght@700&family=Fredoka+One&family=Chewy&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@700&family=Comic+Neue:wght@400;700&family=Fredoka+One&display=swap"
         rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            user-select: none;
         }
 
         body {
             overflow: hidden;
             height: 100vh;
             width: 100vw;
-            font-family: 'Fredoka One', 'Poppins', cursive;
+            font-family: 'Poppins', sans-serif;
             background: #000;
-            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="%23ff3366" d="M16 3.5c-4.5 0-8 3.6-8 8 0 4.5 8 12.5 8 12.5s8-8 8-12.5c0-4.4-3.5-8-8-8z"/></svg>') 16 16, auto;
         }
 
         /* ===== NỀN MÀU HỒNG ===== */
@@ -36,13 +34,7 @@
             width: 100%;
             height: 100%;
             z-index: -2;
-            background: linear-gradient(135deg,
-                    #ffccd5 0%,
-                    #ffafcc 20%,
-                    #ff8fab 40%,
-                    #ff7595 60%,
-                    #ff4d6d 80%,
-                    #c9184a 100%);
+            background: linear-gradient(135deg, #ffccd5 0%, #ffafcc 20%, #ff8fab 40%, #ff7595 60%, #ff4d6d 80%, #c9184a 100%);
         }
 
         /* ===== HOA TULIP BAY ===== */
@@ -55,11 +47,12 @@
             pointer-events: none;
             z-index: 5;
             overflow: hidden;
+            opacity: 0.5;
         }
 
         .tulip {
             position: absolute;
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             opacity: 0;
             animation: tulipFloat 10s linear infinite;
             color: #ff8fab;
@@ -67,252 +60,47 @@
             z-index: 5;
         }
 
-        .tulip:nth-child(1) {
-            left: 5%;
-            animation-delay: 0s;
-            font-size: 2.2rem;
-            color: #ff99cc;
-        }
-
-        .tulip:nth-child(2) {
-            left: 15%;
-            animation-delay: 2s;
-            font-size: 2.8rem;
-            color: #ffb3c6;
-        }
-
-        .tulip:nth-child(3) {
-            left: 25%;
-            animation-delay: 4s;
-            font-size: 2.4rem;
-            color: #ff8fab;
-        }
-
-        .tulip:nth-child(4) {
-            left: 35%;
-            animation-delay: 1s;
-            font-size: 3rem;
-            color: #ffb3c6;
-        }
-
-        .tulip:nth-child(5) {
-            left: 45%;
-            animation-delay: 3s;
-            font-size: 2.2rem;
-            color: #ff99cc;
-        }
-
-        .tulip:nth-child(6) {
-            left: 55%;
-            animation-delay: 5s;
-            font-size: 2.6rem;
-            color: #ff8fab;
-        }
-
-        .tulip:nth-child(7) {
-            left: 65%;
-            animation-delay: 0.5s;
-            font-size: 2.8rem;
-            color: #ffb3c6;
-        }
-
-        .tulip:nth-child(8) {
-            left: 75%;
-            animation-delay: 2.5s;
-            font-size: 2.4rem;
-            color: #ff99cc;
-        }
-
-        .tulip:nth-child(9) {
-            left: 85%;
-            animation-delay: 3.5s;
-            font-size: 3rem;
-            color: #ff8fab;
-        }
-
-        .tulip:nth-child(10) {
-            left: 95%;
-            animation-delay: 1.5s;
-            font-size: 2.2rem;
-            color: #ffb3c6;
-        }
-
-        .tulip:nth-child(11) {
-            left: 10%;
-            animation-delay: 6s;
-            font-size: 2.6rem;
-            color: #ff99cc;
-        }
-
-        .tulip:nth-child(12) {
-            left: 20%;
-            animation-delay: 7s;
-            font-size: 2.8rem;
-            color: #ff8fab;
-        }
-
-        .tulip:nth-child(13) {
-            left: 30%;
-            animation-delay: 5.5s;
-            font-size: 2.4rem;
-            color: #ffb3c6;
-        }
-
-        .tulip:nth-child(14) {
-            left: 40%;
-            animation-delay: 8s;
-            font-size: 3rem;
-            color: #ff99cc;
-        }
-
-        .tulip:nth-child(15) {
-            left: 50%;
-            animation-delay: 4.5s;
-            font-size: 2.2rem;
-            color: #ff8fab;
-        }
-
-        .tulip:nth-child(16) {
-            left: 60%;
-            animation-delay: 9s;
-            font-size: 2.6rem;
-            color: #ffb3c6;
-        }
-
-        .tulip:nth-child(17) {
-            left: 70%;
-            animation-delay: 6.5s;
-            font-size: 2.8rem;
-            color: #ff99cc;
-        }
-
-        .tulip:nth-child(18) {
-            left: 80%;
-            animation-delay: 7.5s;
-            font-size: 2.4rem;
-            color: #ff8fab;
-        }
-
-        .tulip:nth-child(19) {
-            left: 90%;
-            animation-delay: 8.5s;
-            font-size: 3rem;
-            color: #ffb3c6;
-        }
-
-        .tulip:nth-child(20) {
-            left: 2%;
-            animation-delay: 9.5s;
-            font-size: 2.2rem;
-            color: #ff99cc;
-        }
+        .tulip:nth-child(1) { left: 5%; animation-delay: 0s; font-size: 1.5rem; }
+        .tulip:nth-child(2) { left: 15%; animation-delay: 2s; font-size: 1.8rem; }
+        .tulip:nth-child(3) { left: 25%; animation-delay: 4s; font-size: 1.6rem; }
+        .tulip:nth-child(4) { left: 35%; animation-delay: 1s; font-size: 2rem; }
+        .tulip:nth-child(5) { left: 45%; animation-delay: 3s; font-size: 1.5rem; }
+        .tulip:nth-child(6) { left: 55%; animation-delay: 5s; font-size: 1.7rem; }
+        .tulip:nth-child(7) { left: 65%; animation-delay: 0.5s; font-size: 1.8rem; }
+        .tulip:nth-child(8) { left: 75%; animation-delay: 2.5s; font-size: 1.6rem; }
+        .tulip:nth-child(9) { left: 85%; animation-delay: 3.5s; font-size: 2rem; }
+        .tulip:nth-child(10) { left: 95%; animation-delay: 1.5s; font-size: 1.5rem; }
 
         @keyframes tulipFloat {
-            0% {
-                top: -10%;
-                opacity: 0;
-                transform: rotate(0deg) translateX(0);
-            }
-
-            10% {
-                opacity: 0.8;
-            }
-
-            50% {
-                opacity: 0.9;
-                transform: rotate(180deg) translateX(50px);
-            }
-
-            90% {
-                opacity: 0.6;
-            }
-
-            100% {
-                top: 110%;
-                opacity: 0;
-                transform: rotate(360deg) translateX(-50px);
-            }
+            0% { top: -10%; opacity: 0; transform: rotate(0deg) translateX(0); }
+            10% { opacity: 0.8; }
+            50% { opacity: 0.9; transform: rotate(180deg) translateX(50px); }
+            90% { opacity: 0.6; }
+            100% { top: 110%; opacity: 0; transform: rotate(360deg) translateX(-50px); }
         }
 
         /* ===== TRANG TRÍ HOA TULIP CỐ ĐỊNH ===== */
         .tulip-decoration {
             position: fixed;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #ff99cc;
             text-shadow: 0 0 20px rgba(255, 77, 109, 0.6);
             z-index: 6;
             pointer-events: none;
             animation: tulipSway 4s ease-in-out infinite;
+            opacity: 0.6;
         }
 
-        .tulip-decoration-left {
-            left: 20px;
-            bottom: 20px;
-            font-size: 3rem;
-            transform: rotate(-15deg);
-        }
-
-        .tulip-decoration-right {
-            right: 20px;
-            top: 20px;
-            font-size: 3rem;
-            transform: rotate(15deg);
-        }
-
-        .tulip-decoration-top-left {
-            left: 50px;
-            top: 30px;
-            font-size: 2.5rem;
-            transform: rotate(-20deg);
-        }
-
-        .tulip-decoration-bottom-right {
-            right: 50px;
-            bottom: 30px;
-            font-size: 2.5rem;
-            transform: rotate(20deg);
-        }
-
-        .tulip-decoration-center-left {
-            left: 10px;
-            top: 50%;
-            font-size: 2.8rem;
-            transform: translateY(-50%) rotate(-10deg);
-        }
-
-        .tulip-decoration-center-right {
-            right: 10px;
-            top: 50%;
-            font-size: 2.8rem;
-            transform: translateY(-50%) rotate(10deg);
-        }
+        .tulip-decoration-left { left: 10px; bottom: 10px; font-size: 2rem; transform: rotate(-15deg); }
+        .tulip-decoration-right { right: 10px; top: 10px; font-size: 2rem; transform: rotate(15deg); }
+        .tulip-decoration-top-left { left: 20px; top: 20px; font-size: 1.8rem; transform: rotate(-20deg); }
+        .tulip-decoration-bottom-right { right: 20px; bottom: 20px; font-size: 1.8rem; transform: rotate(20deg); }
+        .tulip-decoration-center-left { left: 5px; top: 50%; font-size: 2rem; transform: translateY(-50%) rotate(-10deg); }
+        .tulip-decoration-center-right { right: 5px; top: 50%; font-size: 2rem; transform: translateY(-50%) rotate(10deg); }
 
         @keyframes tulipSway {
-
-            0%,
-            100% {
-                transform: rotate(-5deg) translateY(0);
-            }
-
-            50% {
-                transform: rotate(5deg) translateY(-10px);
-            }
-        }
-
-        .tulip-decoration-right {
-            animation: tulipSwayRight 4s ease-in-out infinite;
-        }
-
-        @keyframes tulipSwayRight {
-
-            0%,
-            100% {
-                transform: rotate(5deg) translateY(0);
-            }
-
-            50% {
-                transform: rotate(-5deg) translateY(-10px);
-            }
+            0%, 100% { transform: rotate(-5deg) translateY(0); }
+            50% { transform: rotate(5deg) translateY(-10px); }
         }
 
         /* ===== LOADER ===== */
@@ -337,18 +125,19 @@
         }
 
         .heart-loader {
-            font-size: 5rem;
+            font-size: 4rem;
             color: white;
-            animation: heartbeat 1.5s infinite, rotate 3s linear infinite;
+            animation: heartbeat 1.5s infinite;
             text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
         }
 
         .loader-text {
-            font-size: 2rem;
+            font-size: 1.3rem;
             color: white;
-            margin-top: 20px;
+            margin-top: 15px;
             font-family: 'Dancing Script', cursive;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            text-align: center;
+            padding: 0 20px;
         }
 
         /* ===== MÀN HÌNH ===== */
@@ -364,10 +153,9 @@
             align-items: center;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 1.2s cubic-bezier(0.215, 0.610, 0.355, 1),
-                visibility 1.2s cubic-bezier(0.215, 0.610, 0.355, 1);
-            overflow: hidden;
-            z-index: 10;
+            transition: opacity 1s, visibility 1s;
+            overflow-y: auto;
+            padding: 15px;
         }
 
         .screen.active {
@@ -375,393 +163,278 @@
             visibility: visible;
         }
 
-        /* ===== MÀN HÌNH 2 (MÀN HÌNH ĐẦU) ===== */
+        /* ===== MÀN HÌNH 2 ===== */
         #screen2 {
-            background: linear-gradient(135deg,
-                    rgba(255, 204, 213, 0.9) 0%,
-                    rgba(255, 175, 204, 0.9) 25%,
-                    rgba(255, 143, 171, 0.9) 50%,
-                    rgba(255, 117, 149, 0.9) 75%,
-                    rgba(255, 77, 109, 0.9) 100%);
-            backdrop-filter: blur(2px);
+            background: linear-gradient(135deg, rgba(255, 204, 213, 0.95), rgba(255, 77, 109, 0.95));
         }
 
         .valentine-text {
             font-family: 'Dancing Script', cursive;
-            font-size: 4.5rem;
+            font-size: 2.5rem;
             color: white;
             text-align: center;
-            padding: 40px;
+            padding: 25px 20px;
             background: rgba(255, 255, 255, 0.2);
-            border-radius: 35px;
-            box-shadow:
-                0 25px 50px rgba(0, 0, 0, 0.25),
-                inset 0 0 80px rgba(255, 255, 255, 0.15),
-                0 0 100px rgba(255, 77, 109, 0.4);
-            text-shadow:
-                0 0 25px rgba(255, 77, 109, 0.9),
-                0 0 50px rgba(255, 77, 109, 0.7);
-            animation: glow 2s infinite alternate;
-            border: 3px solid rgba(255, 255, 255, 0.4);
-            max-width: 800px;
-            margin: 0 20px;
-            backdrop-filter: blur(5px);
-            position: relative;
-            z-index: 20;
+            border-radius: 25px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 0 20px rgba(255, 77, 109, 0.9);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            margin: 0 10px;
         }
 
         .countdown-2 {
             position: absolute;
-            bottom: 40px;
-            right: 40px;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
             color: white;
-            font-size: 1.6rem;
-            background: rgba(255, 77, 109, 0.7);
-            padding: 15px 30px;
-            border-radius: 25px;
-            backdrop-filter: blur(15px);
-            font-weight: 600;
+            font-size: 1.1rem;
+            background: rgba(255, 77, 109, 0.8);
+            padding: 10px 20px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            font-weight: 500;
             border: 2px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            animation: pulse 1.5s infinite;
-            font-family: 'Fredoka One', cursive;
-            z-index: 20;
+            white-space: nowrap;
         }
 
         /* ===== MÀN HÌNH 3 ===== */
         #screen3 {
-            background: linear-gradient(135deg,
-                    rgba(255, 204, 213, 0.95) 0%,
-                    rgba(255, 175, 204, 0.95) 25%,
-                    rgba(255, 143, 171, 0.95) 50%,
-                    rgba(255, 117, 149, 0.95) 75%,
-                    rgba(255, 77, 109, 0.95) 100%);
-            backdrop-filter: blur(2px);
-            padding: 20px;
-            overflow-y: auto;
+            background: linear-gradient(135deg, rgba(255, 204, 213, 0.98), rgba(255, 77, 109, 0.98));
+            padding: 10px;
+            justify-content: flex-start;
         }
 
         .title {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
+            font-size: 2rem;
             color: white;
             text-align: center;
-            margin-bottom: 20px;
-            text-shadow:
-                0 0 25px rgba(255, 255, 255, 0.9),
-                0 0 50px rgba(255, 255, 255, 0.6);
-            animation: fadeInUp 1s ease-out;
-            position: relative;
-            z-index: 20;
+            margin: 15px 0 10px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
         }
 
         .calendar-container {
-            width: 95%;
-            max-width: 900px;
-            height: 500px;
-            perspective: 1500px;
+            width: 100%;
+            max-width: 400px;
+            height: 450px;
             position: relative;
-            animation: fadeInUp 1s ease-out 0.3s both;
-            margin-bottom: 5px;
-            z-index: 20;
+            margin: 5px 0;
         }
 
         .calendar-page {
             position: absolute;
             width: 100%;
             height: 100%;
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 245, 247, 0.95));
-            border-radius: 25px;
-            box-shadow:
-                0 25px 50px rgba(0, 0, 0, 0.2),
-                0 0 80px rgba(255, 77, 109, 0.2),
-                inset 0 0 30px rgba(255, 255, 255, 0.9);
-            padding: 30px;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            padding: 15px;
             display: none;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transform-style: preserve-3d;
-            border: 3px solid rgba(255, 255, 255, 0.6);
-            overflow: hidden;
-            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            overflow-y: auto;
         }
 
         .calendar-page.active {
             display: flex;
-            animation: pageAppear 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        /* Nội dung bên trong khung */
         .page-content {
             width: 100%;
             height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            z-index: 25;
+            gap: 10px;
         }
 
         .big-love-text {
             font-family: 'Dancing Script', cursive;
-            font-size: 3.2rem;
-            background: linear-gradient(45deg, #c9184a, #ff4d6d, #ff8fa3);
+            font-size: 2rem;
+            background: linear-gradient(45deg, #c9184a, #ff4d6d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 15px;
-            text-shadow: 0 0 20px rgba(201, 24, 74, 0.2);
-            animation: heartbeat 1.5s infinite;
+            margin-bottom: 5px;
+            text-align: center;
         }
 
         .page-message {
-            font-size: 1.3rem;
+            font-size: 0.95rem;
             color: #590d22;
-            margin: 10px 0;
-            line-height: 1.6;
-            padding: 0 20px;
+            line-height: 1.5;
             font-family: 'Comic Neue', cursive;
             background: rgba(255, 230, 230, 0.7);
-            border-radius: 25px;
-            padding: 20px;
-            border: 2px solid rgba(255, 77, 109, 0.3);
-            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.1);
-            max-width: 90%;
-            backdrop-filter: blur(5px);
-            text-align: left;
+            border-radius: 15px;
+            padding: 15px;
+            border: 1px solid rgba(255, 77, 109, 0.3);
+            overflow-y: auto;
+            flex: 1;
         }
 
-        /* ===== FORM TRANG 5 ===== */
+        /* ===== TRANG 5 ===== */
         .form-container {
             width: 100%;
             height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            gap: 10px;
         }
 
         .form-title {
             font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             color: #c9184a;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(255, 77, 109, 0.3);
+            text-align: center;
         }
 
         .message-input {
             width: 100%;
-            height: 200px;
-            padding: 20px;
-            border: 3px solid #ff99cc;
-            border-radius: 25px;
-            font-size: 1.2rem;
+            padding: 12px;
+            border: 2px solid #ff99cc;
+            border-radius: 15px;
+            font-size: 0.95rem;
             font-family: 'Comic Neue', cursive;
-            background: rgba(255, 255, 255, 0.9);
+            background: white;
             resize: none;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 20px rgba(255, 77, 109, 0.2);
-            outline: none;
-            transition: all 0.3s;
         }
 
-        .message-input:focus {
-            border-color: #ff4d6d;
-            box-shadow: 0 10px 30px rgba(255, 77, 109, 0.4);
-            transform: scale(1.02);
-        }
-
-        .message-input::placeholder {
-            color: #ff99cc;
-            font-style: italic;
+        #messageInput {
+            height: 150px;
         }
 
         .send-btn {
             background: linear-gradient(45deg, #ff4d6d, #ff8fa3);
             border: none;
-            border-radius: 60px;
-            padding: 15px 50px;
-            font-size: 1.5rem;
+            border-radius: 40px;
+            padding: 12px 20px;
+            font-size: 1.2rem;
             font-weight: bold;
             color: white;
             cursor: pointer;
-            box-shadow: 0 10px 20px rgba(255, 77, 109, 0.4);
-            transition: all 0.3s;
-            border: 3px solid white;
-            font-family: 'Fredoka One', cursive;
-            letter-spacing: 2px;
+            border: 2px solid white;
+            width: 100%;
         }
 
-        .send-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 30px rgba(255, 77, 109, 0.6);
-            background: linear-gradient(45deg, #ff8fa3, #ff4d6d);
+        /* ===== TRANG 6 (Câu hỏi) ===== */
+        .questions-container {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding-right: 3px;
         }
 
-        .send-btn:active {
-            transform: scale(0.95);
+        .question-item {
+            background: rgba(255, 230, 230, 0.7);
+            padding: 10px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 77, 109, 0.3);
         }
 
-        .success-message {
+        .question-item p {
+            font-weight: 600;
             color: #c9184a;
-            font-size: 1.2rem;
-            margin-top: 15px;
-            font-family: 'Comic Neue', cursive;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 10px 20px;
-            border-radius: 50px;
-            display: none;
-            border: 2px solid #ff99cc;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
 
-        /* PHẦN ĐIỀU HƯỚNG - TRANG Ở GIỮA 2 NÚT */
+        .question-item textarea {
+            width: 100%;
+            height: 60px;
+            padding: 8px;
+            border: 2px solid #ff99cc;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-family: 'Comic Neue', cursive;
+            background: white;
+            resize: none;
+        }
+
+        /* ===== TRANG 7 ===== */
+        .love-message {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            background: linear-gradient(45deg, #c9184a, #ff4d6d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.4;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* ===== ĐIỀU HƯỚNG ===== */
         .navigation-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 30px;
-            margin-top: 15px;
-            position: relative;
-            z-index: 30;
+            gap: 10px;
+            margin-top: 10px;
             background: rgba(255, 255, 255, 0.2);
-            padding: 10px 25px;
-            border-radius: 60px;
+            padding: 8px 12px;
+            border-radius: 40px;
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            width: 100%;
+            max-width: 350px;
         }
 
         .nav-btn {
-            background: rgba(255, 255, 255, 0.7);
-            border: 3px solid white;
-            color: white;
-            font-size: 1.3rem;
-            padding: 10px 30px;
-            border-radius: 60px;
-            cursor: pointer;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s;
-            font-weight: bold;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .nav-btn:hover {
-            background: white;
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid white;
             color: #ff4d6d;
-            transform: scale(1.1);
-            border: 3px solid #ff4d6d;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            min-width: 60px;
         }
 
         .page-indicator {
-            font-size: 1.4rem;
+            font-size: 0.9rem;
             color: #c9184a;
             font-weight: bold;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 8px 30px;
-            border-radius: 50px;
-            box-shadow: 0 5px 20px rgba(201, 24, 74, 0.3);
-            font-family: 'Fredoka One', cursive;
-            border: 3px solid #ff99cc;
-            backdrop-filter: blur(5px);
-            display: inline-block;
-            text-align: center;
+            background: white;
+            padding: 5px 12px;
+            border-radius: 30px;
+            border: 2px solid #ff99cc;
             white-space: nowrap;
-            animation: pulse 2s infinite;
-        }
-
-        .heart-symbol {
-            color: #ff4d6d;
-            font-size: 1.6rem;
-            display: inline-block;
-            animation: heartbeat 1.5s infinite;
         }
 
         .footer-quote {
             color: white;
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-family: 'Comic Neue', cursive;
             text-align: center;
-            margin-top: 20px;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .success-message {
+            color: #c9184a;
+            font-size: 0.9rem;
+            font-family: 'Comic Neue', cursive;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 12px;
+            border-radius: 30px;
+            display: none;
+            border: 1px solid #ff99cc;
+            text-align: center;
         }
 
         /* ===== HIỆU ỨNG ===== */
         @keyframes heartbeat {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-
-            100% {
-                transform: scale(1);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
         @keyframes pulse {
-            0% {
-                transform: scale(1);
-                opacity: 0.9;
-            }
-
-            50% {
-                transform: scale(1.05);
-                opacity: 1;
-            }
-
-            100% {
-                transform: scale(1);
-                opacity: 0.9;
-            }
-        }
-
-        @keyframes glow {
-            0% {
-                box-shadow: 0 0 20px rgba(255, 77, 109, 0.5);
-            }
-
-            100% {
-                box-shadow: 0 0 40px rgba(255, 77, 109, 0.8);
-            }
-        }
-
-        @keyframes rotate {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pageAppear {
-            0% {
-                opacity: 0;
-                transform: translateY(30px) scale(0.9);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
+            0%, 100% { opacity: 0.9; }
+            50% { opacity: 1; }
         }
 
         /* Transition overlay */
@@ -771,11 +444,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #ff4d6d, #ff8fa3, #ffb3c6);
+            background: linear-gradient(135deg, #ff4d6d, #ff8fa3);
             z-index: 999;
             transform: scaleY(0);
             transform-origin: bottom;
-            transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
+            transition: transform 0.8s;
         }
 
         .transition-overlay.active {
@@ -783,195 +456,27 @@
             transform-origin: top;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .valentine-text {
-                font-size: 3.5rem;
-                padding: 30px;
-            }
-
-            .countdown-2 {
-                bottom: 30px;
-                right: 30px;
-                font-size: 1.4rem;
-                padding: 12px 25px;
-            }
-
-            .title {
-                font-size: 2.8rem;
-            }
-
-            .calendar-container {
-                height: 550px;
-            }
-
-            .big-love-text {
-                font-size: 2.8rem;
-            }
-
-            .page-message {
-                font-size: 1.2rem;
-                padding: 18px;
-                max-width: 95%;
-            }
-
-            .tulip {
-                font-size: 2rem;
-            }
-
-            .navigation-wrapper {
-                gap: 20px;
-                padding: 8px 20px;
-            }
-
-            .page-indicator {
-                font-size: 1.2rem;
-                padding: 6px 25px;
-            }
-
-            .nav-btn {
-                font-size: 1.2rem;
-                padding: 8px 25px;
-            }
-
-            .form-title {
-                font-size: 2rem;
-            }
-
-            .message-input {
-                height: 180px;
-                font-size: 1rem;
-            }
-
-            .send-btn {
-                font-size: 1.3rem;
-                padding: 12px 40px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .valentine-text {
-                font-size: 2.5rem;
-                padding: 20px;
-            }
-
-            .countdown-2 {
-                font-size: 1.2rem;
-                padding: 10px 20px;
-            }
-
-            .title {
-                font-size: 2.2rem;
-            }
-
-            .calendar-container {
-                height: 600px;
-            }
-
-            .loader-text {
-                font-size: 1.5rem;
-                text-align: center;
-                padding: 0 20px;
-            }
-
-            .big-love-text {
-                font-size: 2.2rem;
-            }
-
-            .page-message {
-                font-size: 1rem;
-                padding: 15px;
-                max-width: 98%;
-            }
-
-            .navigation-wrapper {
-                gap: 10px;
-                padding: 5px 15px;
-                flex-wrap: wrap;
-            }
-
-            .page-indicator {
-                font-size: 1rem;
-                padding: 5px 15px;
-                white-space: normal;
-            }
-
-            .nav-btn {
-                font-size: 1rem;
-                padding: 6px 15px;
-            }
-
-            .tulip {
-                font-size: 1.8rem;
-            }
-
-            .tulip-decoration {
-                font-size: 1.5rem;
-            }
-
-            .heart-symbol {
-                font-size: 1.4rem;
-            }
-
-            .footer-quote {
-                font-size: 1.2rem;
-                margin-top: 15px;
-            }
-
-            .form-title {
-                font-size: 1.8rem;
-            }
-
-            .message-input {
-                height: 150px;
-                font-size: 0.9rem;
-                padding: 15px;
-            }
-
-            .send-btn {
-                font-size: 1.2rem;
-                padding: 10px 30px;
-            }
+        /* Responsive cho iPhone 7 */
+        @media (max-width: 375px) {
+            .title { font-size: 1.8rem; }
+            .big-love-text { font-size: 1.8rem; }
+            .calendar-container { height: 420px; }
+            .page-message { font-size: 0.85rem; padding: 10px; }
+            .nav-btn { font-size: 0.8rem; padding: 5px 8px; min-width: 50px; }
+            .page-indicator { font-size: 0.8rem; padding: 5px 8px; }
+            .footer-quote { font-size: 0.85rem; }
         }
     </style>
 </head>
 
 <body>
-    <!-- NỀN MÀU HỒNG -->
     <div class="pink-background"></div>
 
-    <!-- HOA TULIP BAY KHẮP MÀN HÌNH -->
+    <!-- HOA TULIP BAY -->
     <div class="tulip-container">
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
-        <div class="tulip">🌷</div>
+        <div class="tulip">🌷</div><div class="tulip">🌷</div><div class="tulip">🌷</div><div class="tulip">🌷</div>
+        <div class="tulip">🌷</div><div class="tulip">🌷</div><div class="tulip">🌷</div><div class="tulip">🌷</div>
+        <div class="tulip">🌷</div><div class="tulip">🌷</div>
     </div>
 
     <!-- TRANG TRÍ HOA TULIP CỐ ĐỊNH -->
@@ -979,133 +484,154 @@
     <div class="tulip-decoration tulip-decoration-right">🌷</div>
     <div class="tulip-decoration tulip-decoration-top-left">🌷</div>
     <div class="tulip-decoration tulip-decoration-bottom-right">🌷</div>
-    <div class="tulip-decoration tulip-decoration-center-left">🌷</div>
-    <div class="tulip-decoration tulip-decoration-center-right">🌷</div>
 
-    <!-- Loader: Anh chuẩn bị yêu thương cho em -->
+    <!-- Loader -->
     <div class="loader" id="loader">
         <div class="heart-loader">💝</div>
         <div class="loader-text">Anh chuẩn bị yêu thương cho em...</div>
-        <div style="margin-top: 20px; font-size: 1.8rem; color: white; opacity: 0.7; animation: pulse 2s infinite;">
-            🌷 🌷 🌷
-        </div>
     </div>
 
     <!-- Hiệu ứng chuyển màn hình -->
     <div class="transition-overlay" id="transitionOverlay"></div>
 
-    <!-- MÀN HÌNH 2 (MÀN HÌNH ĐẦU TIÊN) -->
+    <!-- MÀN HÌNH 2 -->
     <div class="screen active" id="screen2">
-        <div style="text-align: center; padding: 20px; position: relative; z-index: 20;">
-            <h1 class="valentine-text">Chúc Valentine Anh Yêu Em ❤️</h1>
-            <div
-                style="margin-top: 40px; font-size: 3rem; color: white; animation: pulse 2s infinite; text-shadow: 0 0 20px rgba(255,255,255,0.8);">
-                🌷 💝 🌷
-            </div>
-            <div class="countdown-2" id="countdown2">🌷 Chuyển trang sau: 3 giây 🌷</div>
+        <div style="text-align: center; width: 100%;">
+            <h1 class="valentine-text">Chúc Valentine<br>Anh Yêu Em ❤️</h1>
+            <div style="margin-top: 30px; font-size: 2.5rem; color: white;">🌷 💝 🌷</div>
+            <div class="countdown-2" id="countdown2">🌷 Chuyển sau: 3s 🌷</div>
         </div>
     </div>
 
-    <!-- MÀN HÌNH 3 - NỘI DUNG CHO BÉ NHI -->
+    <!-- MÀN HÌNH 3 -->
     <div class="screen" id="screen3">
         <h1 class="title">Gửi Em Bé Của Anh 💌</h1>
 
         <div class="calendar-container" id="calendarContainer">
-            <!-- Trang 1 – Lời mở đầu -->
+            <!-- Trang 1 -->
             <div class="calendar-page active" id="page1">
                 <div class="page-content">
-                    <h2 class="big-love-text">Gửi bé Nhi của anh</h2>
+                    <h2 class="big-love-text">Gửi bé Nhi</h2>
                     <div class="page-message">
-                        Anh không giỏi nói lời đường mật, nhưng anh muốn yêu em bằng sự chân thành từ trái tim
-                        anh.<br><br>
-                        Từ ngày có em, cuộc sống của anh trở nên yên bình, nhẹ nhàng và ý nghĩa hơn.<br><br>
-                        Chỉ cần nhìn thấy em, nhìn thấy nụ cười và đôi mắt ấy, mọi tiêu cực trong anh tan biến.<br><br>
-                        Mắt em thật sự rất đẹp <span class="heart-symbol">❤️</span>
+                        Anh không giỏi nói lời đường mật, nhưng anh muốn yêu em bằng sự chân thành.<br><br>
+                        Từ ngày có em, cuộc sống của anh ý nghĩa hơn.<br><br>
+                        Chỉ cần nhìn thấy nụ cười của em, mọi mệt mỏi tan biến.<br><br>
+                        Mắt em thật đẹp <span style="color: #ff4d6d;">❤️</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Trang 2 – Lời yêu và mong ước -->
+            <!-- Trang 2 -->
             <div class="calendar-page" id="page2">
                 <div class="page-content">
-                    <h2 class="big-love-text">Em là niềm hạnh phúc của anh</h2>
+                    <h2 class="big-love-text">Em là hạnh phúc</h2>
                     <div class="page-message">
-                        Anh không muốn hứa hẹn điều gì quá xa vời, chỉ mong được bên em mãi mãi.<br><br>
-                        Mỗi ngày đều có em, được gọi em là “em bé” đáng yêu của anh.<br><br>
-                        Anh không muốn lại mất em. Thương em vô cùng.
+                        Anh chỉ mong được bên em mãi mãi.<br><br>
+                        Mỗi ngày đều có em, được gọi em là “em bé” của anh.<br><br>
+                        Anh không muốn mất em. Thương em nhiều!
                     </div>
                 </div>
             </div>
 
-            <!-- Trang 3 – Lễ tình nhân và cảm ơn -->
+            <!-- Trang 3 -->
             <div class="calendar-page" id="page3">
                 <div class="page-content">
-                    <h2 class="big-love-text">Cảm ơn em đã bên anh</h2>
+                    <h2 class="big-love-text">Cảm ơn em</h2>
                     <div class="page-message">
-                        Lễ tình nhân năm nay anh đã không còn một mình.<br><br>
-                        Cảm ơn em vì luôn bên cạnh anh, cho anh cảm giác ấm áp và hạnh phúc.<br><br>
-                        Mong rằng năm sau và những năm tiếp theo, chúng ta vẫn luôn bên nhau như thế.
+                        Lễ tình nhân năm nay anh không còn một mình.<br><br>
+                        Cảm ơn em đã bên cạnh anh.<br><br>
+                        Mong năm sau và mãi mãi vẫn bên nhau.
                     </div>
                 </div>
             </div>
 
-            <!-- Trang 4 – Lời nhắn nhủ cuối -->
+            <!-- Trang 4 -->
             <div class="calendar-page" id="page4">
                 <div class="page-content">
-                    <h2 class="big-love-text">Mong chúng ta luôn bên nhau</h2>
+                    <h2 class="big-love-text">Mong ước</h2>
                     <div class="page-message">
-                        Khi em xuống đây để học, anh sẽ đến gặp em mỗi ngày <span class="heart-symbol">❤️</span><br><br>
-                        Nếu một ngày em thấy mỏi mệt, hãy nhớ rằng luôn có một người sẵn sàng ngồi bên em, lắng nghe tâm
-                        sự và dành trọn sự dịu dàng, yêu thương cho em.<br><br>
-                        Anh muốn chúng ta cùng bước tiếp, cùng nhau trải qua mọi ngày vui và khó khăn.
+                        Khi em xuống đây học, anh sẽ gặp em mỗi ngày <span style="color: #ff4d6d;">❤️</span><br><br>
+                        Nếu em mệt, hãy nhớ luôn có anh bên cạnh.<br><br>
+                        Anh muốn chúng ta cùng bước tiếp mọi ngày.
                     </div>
                 </div>
             </div>
 
-            <!-- Trang 5 - Form nhập nội dung và nút gửi -->
+            <!-- Trang 5 -->
             <div class="calendar-page" id="page5">
                 <div class="form-container">
-                    <h2 class="form-title">💌 Lời nhắn của em 💌</h2>
-                    <textarea class="message-input" id="messageInput"
-                        placeholder="Em muốn nói gì với anh? ..."></textarea>
-                    <button class="send-btn" id="sendBtn">
-                        <i class="fas fa-paper-plane"></i> GỬI
-                    </button>
-                    <div class="success-message" id="successMessage">
-                        🌷 Đã gửi thành công! Cảm ơn em yêu! 🌷
+                    <h2 class="form-title">💌 Lời nhắn của em</h2>
+                    <textarea class="message-input" id="messageInput" placeholder="Em muốn nói gì với anh? ..."></textarea>
+                    <button class="send-btn" id="sendBtn">GỬI</button>
+                    <div class="success-message" id="successMessage">Đã gửi thành công!</div>
+                </div>
+            </div>
+
+            <!-- Trang 6 - Câu hỏi -->
+            <div class="calendar-page" id="page6">
+                <div class="page-content">
+                    <h2 class="big-love-text" style="font-size: 1.8rem;">💝 Câu hỏi cho em</h2>
+                    <div class="questions-container">
+                        <div class="question-item">
+                            <p>1. Khoảnh khắc nào khiến em quyết định tiến tới với anh?</p>
+                            <textarea id="answer1" placeholder="Câu trả lời..."></textarea>
+                        </div>
+                        <div class="question-item">
+                            <p>2. Khoảng thời gian nào em thấy yêu anh nhất?</p>
+                            <textarea id="answer2" placeholder="Câu trả lời..."></textarea>
+                        </div>
+                        <div class="question-item">
+                            <p>3. Điều gì ở anh làm em ngạc nhiên?</p>
+                            <textarea id="answer3" placeholder="Câu trả lời..."></textarea>
+                        </div>
+                        <div class="question-item">
+                            <p>4. Khi gặp anh, em muốn làm gì đầu tiên?</p>
+                            <textarea id="answer4" placeholder="Câu trả lời..."></textarea>
+                        </div>
+                        <div class="question-item">
+                            <p>5. Em nghĩ sao về quy tắc "cả 2 đồng ý mới chia tay"?</p>
+                            <textarea id="answer5" placeholder="Câu trả lời..."></textarea>
+                        </div>
+                        <div class="question-item">
+                            <p>6. Em kể với mọi người về anh như thế nào?</p>
+                            <textarea id="answer6" placeholder="Câu trả lời..."></textarea>
+                        </div>
                     </div>
+                    <button class="send-btn" id="sendAnswersBtn" style="margin-top: 10px;">GỬI LỜI ĐÁP</button>
+                    <div class="success-message" id="answersSuccessMessage">Đã gửi thành công!</div>
+                </div>
+            </div>
+
+            <!-- Trang 7 -->
+            <div class="calendar-page" id="page7">
+                <div class="page-content" style="justify-content: center;">
+                    <h2 class="big-love-text" style="font-size: 3rem; margin-bottom: 10px;">❤️</h2>
+                    <div class="love-message">
+                        Anh yêu em<br>cục zàng của anh
+                    </div>
+                    <div style="margin-top: 20px; font-size: 2rem; color: #ff4d6d;">🌷 💖 🌷</div>
                 </div>
             </div>
         </div>
 
-        <!-- PHẦN ĐIỀU HƯỚNG - TRANG Ở GIỮA 2 NÚT -->
+        <!-- ĐIỀU HƯỚNG -->
         <div class="navigation-wrapper">
-            <button class="nav-btn" id="prevPageBtn">◀ Trước</button>
-            <div class="page-indicator" id="pageIndicator">🌷 Trang 1/5 🌷</div>
-            <button class="nav-btn" id="nextPageBtn">Sau ▶</button>
+            <button class="nav-btn" id="prevPageBtn">◀</button>
+            <div class="page-indicator" id="pageIndicator">1/7</div>
+            <button class="nav-btn" id="nextPageBtn">▶</button>
         </div>
-
-        <div class="footer-quote">
-            "Yêu là khi mỗi ngày đều là Valentine 💖"
-        </div>
+        <div class="footer-quote">"Mỗi ngày đều là Valentine"</div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        // ===== EMAILJS INIT =====
         emailjs.init("fRoM9ikD3BSv4A9UU");
-        // 🔴 THAY YOUR_PUBLIC_KEY bằng Public Key của bạn
 
-        // ===== BIẾN TOÀN CỤC =====
-        let isTransitioning = false;
         let countdownInterval = null;
         let currentPage = 1;
-        const totalPages = 5;
+        let totalPages = 7;
 
-        // ===== CHUYỂN MÀN HÌNH =====
         function transitionToScreen(screenNumber) {
-            if (isTransitioning && screenNumber !== 3) return;
-
             if (countdownInterval) {
                 clearInterval(countdownInterval);
                 countdownInterval = null;
@@ -1115,65 +641,42 @@
             transitionOverlay.classList.add('active');
 
             setTimeout(() => {
-                const screens = document.querySelectorAll('.screen');
-                screens.forEach(screen => {
-                    screen.classList.remove('active');
-                });
+                document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
+                document.getElementById(`screen${screenNumber}`).classList.add('active');
 
-                const nextScreen = document.getElementById(`screen${screenNumber}`);
-                if (nextScreen) {
-                    nextScreen.classList.add('active');
-
-                    if (screenNumber === 2) {
-                        setTimeout(() => startCountdown(), 300);
-                    }
-
-                    if (screenNumber === 3) {
-                        currentPage = 1;
-                        showPage(currentPage);
-                    }
+                if (screenNumber === 2) {
+                    setTimeout(() => startCountdown(), 300);
+                }
+                if (screenNumber === 3) {
+                    currentPage = 1;
+                    showPage(currentPage);
                 }
 
-                setTimeout(() => {
-                    transitionOverlay.classList.remove('active');
-                }, 800);
-
+                setTimeout(() => transitionOverlay.classList.remove('active'), 800);
             }, 800);
         }
 
-        // ===== ĐẾM NGƯỢC =====
         function startCountdown() {
             let countdown = 3;
             const countdownElement = document.getElementById('countdown2');
 
             countdownInterval = setInterval(() => {
-                countdownElement.innerHTML = `🌷 Chuyển trang sau: ${countdown} giây 🌷`;
+                countdownElement.innerHTML = `🌷 Chuyển sau: ${countdown}s 🌷`;
                 countdown--;
-
                 if (countdown < 0) {
                     clearInterval(countdownInterval);
-                    countdownInterval = null;
-                    setTimeout(() => transitionToScreen(3), 1000);
+                    setTimeout(() => transitionToScreen(3), 500);
                 }
             }, 1000);
         }
 
-        // ===== HIỂN THỊ TRANG =====
         function showPage(pageNumber) {
             for (let i = 1; i <= totalPages; i++) {
-                const page = document.getElementById(`page${i}`);
-                if (page) page.classList.remove('active');
+                document.getElementById(`page${i}`)?.classList.remove('active');
             }
-
-            const currentPageElement = document.getElementById(`page${pageNumber}`);
-            if (currentPageElement) currentPageElement.classList.add('active');
-
+            document.getElementById(`page${pageNumber}`)?.classList.add('active');
             currentPage = pageNumber;
-
-            const pageIndicator = document.getElementById('pageIndicator');
-            if (pageIndicator) {
-                pageIndicator.innerHTML = `🌷 Trang ${pageNumber}/${totalPages} 🌷`;
-            }
+            document.getElementById('pageIndicator').innerHTML = `${pageNumber}/${totalPages}`;
         }
 
         function nextPage() {
@@ -1186,62 +689,96 @@
             else showPage(totalPages);
         }
 
-        // ===== GỬI EMAIL THẬT =====
         function sendEmail() {
             const message = document.getElementById('messageInput').value.trim();
-
-            if (message === '') {
-                alert('💝 Hãy nhập lời nhắn trước khi gửi nhé! 💝');
+            if (!message) {
+                alert('Nhập lời nhắn nhé!');
                 return;
             }
 
             const successMessage = document.getElementById('successMessage');
             successMessage.style.display = 'block';
-            successMessage.innerHTML = '⏰ Đang gửi lời nhắn... ⏰';
+            successMessage.innerHTML = '⏰ Đang gửi...';
 
-            const templateParams = {
+            emailjs.send("service_nka6s18", "template_f0xkuce", {
                 message: message,
                 date: new Date().toLocaleDateString('vi-VN')
-            };
-
-            emailjs.send("service_nka6s18", "template_f0xkuce", templateParams)
-                .then(function (response) {
-                    successMessage.innerHTML = '🌷 Đã gửi thành công! 🌷';
-                    document.getElementById('messageInput').value = '';
-
-                    setTimeout(() => {
-                        successMessage.style.display = 'none';
-                    }, 5000);
-                })
-                .catch(function (error) {
-                    successMessage.innerHTML = '❌ Gửi thất bại! Kiểm tra lại EmailJS!';
-                    console.error(error);
-                });
+            })
+            .then(() => {
+                successMessage.innerHTML = '🌷 Gửi thành công!';
+                document.getElementById('messageInput').value = '';
+                setTimeout(() => successMessage.style.display = 'none', 3000);
+            })
+            .catch(error => {
+                successMessage.innerHTML = '❌ Gửi thất bại!';
+                console.error(error);
+                setTimeout(() => successMessage.style.display = 'none', 3000);
+            });
         }
 
-        // ===== KHỞI TẠO =====
-        document.addEventListener('DOMContentLoaded', function () {
+        function sendAnswers() {
+            const answers = [];
+            for (let i = 1; i <= 6; i++) {
+                const answer = document.getElementById(`answer${i}`)?.value.trim();
+                if (!answer) {
+                    alert('Trả lời hết câu hỏi nhé!');
+                    return;
+                }
+                answers.push(answer);
+            }
 
+            const successMessage = document.getElementById('answersSuccessMessage');
+            successMessage.style.display = 'block';
+            successMessage.innerHTML = '⏰ Đang gửi...';
+
+            const questions = [
+                '1. Khoảnh khắc quyết định yêu anh?',
+                '2. Thời gian yêu anh nhất?',
+                '3. Điều ngạc nhiên ở anh?',
+                '4. Muốn làm gì khi gặp anh?',
+                '5. Quy tắc chia tay?',
+                '6. Kể về anh với mọi người?'
+            ];
+
+            let fullMessage = '';
+            for (let i = 0; i < 6; i++) {
+                fullMessage += `${questions[i]}\nTrả lời: ${answers[i]}\n\n---\n\n`;
+            }
+
+            emailjs.send("service_nka6s18", "template_f0xkuce", {
+                message: fullMessage,
+                date: new Date().toLocaleDateString('vi-VN')
+            })
+            .then(() => {
+                successMessage.innerHTML = '🌷 Gửi thành công!';
+                for (let i = 1; i <= 6; i++) {
+                    document.getElementById(`answer${i}`).value = '';
+                }
+                setTimeout(() => successMessage.style.display = 'none', 3000);
+            })
+            .catch(error => {
+                successMessage.innerHTML = '❌ Gửi thất bại!';
+                console.error(error);
+                setTimeout(() => successMessage.style.display = 'none', 3000);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 document.getElementById('loader').classList.add('hidden');
-
                 setTimeout(() => {
-                    const screens = document.querySelectorAll('.screen');
-                    screens.forEach(screen => screen.classList.remove('active'));
+                    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
                     document.getElementById('screen2').classList.add('active');
-
                     startCountdown();
                     showPage(1);
                 }, 300);
-
             }, 2000);
 
             document.getElementById('nextPageBtn').addEventListener('click', nextPage);
             document.getElementById('prevPageBtn').addEventListener('click', prevPage);
             document.getElementById('sendBtn').addEventListener('click', sendEmail);
+            document.getElementById('sendAnswersBtn').addEventListener('click', sendAnswers);
         });
     </script>
-
 </body>
-
 </html>
