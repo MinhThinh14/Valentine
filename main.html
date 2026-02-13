@@ -8,21 +8,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@700&family=Comic+Neue:wght@400;700&family=Fredoka+One&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
             overflow: hidden;
             height: 100vh;
             width: 100vw;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
             background: #000;
         }
 
@@ -95,8 +94,6 @@
         .tulip-decoration-right { right: 10px; top: 10px; font-size: 2rem; transform: rotate(15deg); }
         .tulip-decoration-top-left { left: 20px; top: 20px; font-size: 1.8rem; transform: rotate(-20deg); }
         .tulip-decoration-bottom-right { right: 20px; bottom: 20px; font-size: 1.8rem; transform: rotate(20deg); }
-        .tulip-decoration-center-left { left: 5px; top: 50%; font-size: 2rem; transform: translateY(-50%) rotate(-10deg); }
-        .tulip-decoration-center-right { right: 5px; top: 50%; font-size: 2rem; transform: translateY(-50%) rotate(10deg); }
 
         @keyframes tulipSway {
             0%, 100% { transform: rotate(-5deg) translateY(0); }
@@ -177,9 +174,11 @@
             background: rgba(255, 255, 255, 0.2);
             border-radius: 25px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            text-shadow: 0 0 20px rgba(255, 77, 109, 0.9);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
             border: 2px solid rgba(255, 255, 255, 0.4);
             margin: 0 10px;
+            font-weight: 600;
+            line-height: 1.3;
         }
 
         .countdown-2 {
@@ -196,6 +195,7 @@
             font-weight: 500;
             border: 2px solid rgba(255, 255, 255, 0.4);
             white-space: nowrap;
+            font-family: 'Poppins', sans-serif;
         }
 
         /* ===== MÀN HÌNH 3 ===== */
@@ -212,6 +212,8 @@
             text-align: center;
             margin: 15px 0 10px;
             text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         .calendar-container {
@@ -257,12 +259,14 @@
             background-clip: text;
             margin-bottom: 5px;
             text-align: center;
+            font-weight: 700;
+            line-height: 1.2;
         }
 
         .page-message {
             font-size: 0.95rem;
             color: #590d22;
-            line-height: 1.5;
+            line-height: 1.6;
             font-family: 'Comic Neue', cursive;
             background: rgba(255, 230, 230, 0.7);
             border-radius: 15px;
@@ -270,6 +274,7 @@
             border: 1px solid rgba(255, 77, 109, 0.3);
             overflow-y: auto;
             flex: 1;
+            font-weight: 400;
         }
 
         /* ===== TRANG 5 ===== */
@@ -286,6 +291,7 @@
             font-size: 1.8rem;
             color: #c9184a;
             text-align: center;
+            font-weight: 700;
         }
 
         .message-input {
@@ -297,6 +303,12 @@
             font-family: 'Comic Neue', cursive;
             background: white;
             resize: none;
+            outline: none;
+            color: #333;
+        }
+
+        .message-input:focus {
+            border-color: #ff4d6d;
         }
 
         #messageInput {
@@ -309,22 +321,29 @@
             border-radius: 40px;
             padding: 12px 20px;
             font-size: 1.2rem;
-            font-weight: bold;
+            font-weight: 600;
             color: white;
             cursor: pointer;
             border: 2px solid white;
             width: 100%;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .send-btn:active {
+            transform: scale(0.98);
         }
 
         /* ===== TRANG 6 (Câu hỏi) ===== */
         .questions-container {
             width: 100%;
-            height: 100%;
+            flex: 1;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
             gap: 12px;
             padding-right: 3px;
+            margin-bottom: 10px;
         }
 
         .question-item {
@@ -340,6 +359,7 @@
             margin-bottom: 8px;
             font-size: 0.9rem;
             line-height: 1.4;
+            font-family: 'Poppins', sans-serif;
         }
 
         .question-item textarea {
@@ -352,6 +372,12 @@
             font-family: 'Comic Neue', cursive;
             background: white;
             resize: none;
+            outline: none;
+            color: #333;
+        }
+
+        .question-item textarea:focus {
+            border-color: #ff4d6d;
         }
 
         /* ===== TRANG 7 ===== */
@@ -365,6 +391,7 @@
             line-height: 1.4;
             text-align: center;
             padding: 10px;
+            font-weight: 700;
         }
 
         /* ===== ĐIỀU HƯỚNG ===== */
@@ -383,7 +410,7 @@
         }
 
         .nav-btn {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             border: 2px solid white;
             color: #ff4d6d;
             font-size: 0.9rem;
@@ -392,49 +419,61 @@
             cursor: pointer;
             font-weight: 600;
             min-width: 60px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-btn:active {
+            background: white;
+            transform: scale(0.95);
         }
 
         .page-indicator {
             font-size: 0.9rem;
             color: #c9184a;
-            font-weight: bold;
+            font-weight: 600;
             background: white;
             padding: 5px 12px;
             border-radius: 30px;
             border: 2px solid #ff99cc;
             white-space: nowrap;
+            font-family: 'Poppins', sans-serif;
         }
 
         .footer-quote {
             color: white;
             font-size: 1rem;
-            font-family: 'Comic Neue', cursive;
+            font-family: 'Dancing Script', cursive;
             text-align: center;
             margin-top: 10px;
             padding: 0 10px;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
         .success-message {
             color: #c9184a;
             font-size: 0.9rem;
-            font-family: 'Comic Neue', cursive;
+            font-family: 'Poppins', sans-serif;
             background: rgba(255, 255, 255, 0.9);
             padding: 8px 12px;
             border-radius: 30px;
             display: none;
             border: 1px solid #ff99cc;
             text-align: center;
+            font-weight: 500;
+        }
+
+        .heart-symbol {
+            color: #ff4d6d;
+            font-size: 1.2rem;
+            display: inline-block;
+            animation: heartbeat 1.5s infinite;
         }
 
         /* ===== HIỆU ỨNG ===== */
         @keyframes heartbeat {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.1); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.9; }
-            50% { opacity: 1; }
         }
 
         /* Transition overlay */
@@ -456,15 +495,13 @@
             transform-origin: top;
         }
 
-        /* Responsive cho iPhone 7 */
+        /* Responsive cho iPhone nhỏ */
         @media (max-width: 375px) {
             .title { font-size: 1.8rem; }
             .big-love-text { font-size: 1.8rem; }
             .calendar-container { height: 420px; }
-            .page-message { font-size: 0.85rem; padding: 10px; }
-            .nav-btn { font-size: 0.8rem; padding: 5px 8px; min-width: 50px; }
-            .page-indicator { font-size: 0.8rem; padding: 5px 8px; }
-            .footer-quote { font-size: 0.85rem; }
+            .page-message { font-size: 0.85rem; padding: 12px; }
+            .love-message { font-size: 2rem; }
         }
     </style>
 </head>
@@ -497,9 +534,9 @@
     <!-- MÀN HÌNH 2 -->
     <div class="screen active" id="screen2">
         <div style="text-align: center; width: 100%;">
-            <h1 class="valentine-text">Chúc Valentine<br>Anh Yêu Em ❤️</h1>
+            <h1 class="valentine-text">Chúc Valentine<br>hạnh phúc bên anh ❤️</h1>
             <div style="margin-top: 30px; font-size: 2.5rem; color: white;">🌷 💝 🌷</div>
-            <div class="countdown-2" id="countdown2">🌷 Chuyển sau: 3s 🌷</div>
+            <div class="countdown-2" id="countdown2">🌷 3s 🌷</div>
         </div>
     </div>
 
@@ -515,8 +552,8 @@
                     <div class="page-message">
                         Anh không giỏi nói lời đường mật, nhưng anh muốn yêu em bằng sự chân thành.<br><br>
                         Từ ngày có em, cuộc sống của anh ý nghĩa hơn.<br><br>
-                        Chỉ cần nhìn thấy nụ cười của em, mọi mệt mỏi tan biến.<br><br>
-                        Mắt em thật đẹp <span style="color: #ff4d6d;">❤️</span>
+                        Chỉ cần nhìn thấy em, nhìn thấy nụ cười và đôi mắt ấy, mọi mệt mỏi tan biến.<br><br>
+                        Mắt em đẹp lắm >< <span class="heart-symbol">❤️</span>
                     </div>
                 </div>
             </div>
@@ -527,7 +564,7 @@
                     <h2 class="big-love-text">Em là hạnh phúc</h2>
                     <div class="page-message">
                         Anh chỉ mong được bên em mãi mãi.<br><br>
-                        Mỗi ngày đều có em, được gọi em là “em bé” của anh.<br><br>
+                        Mỗi ngày đều có em, được gọi em là "em bé" của anh.<br><br>
                         Anh không muốn mất em. Thương em nhiều!
                     </div>
                 </div>
@@ -550,8 +587,8 @@
                 <div class="page-content">
                     <h2 class="big-love-text">Mong ước</h2>
                     <div class="page-message">
-                        Khi em xuống đây học, anh sẽ gặp em mỗi ngày <span style="color: #ff4d6d;">❤️</span><br><br>
-                        Nếu em mệt, hãy nhớ luôn có anh bên cạnh.<br><br>
+                        Khi em xuống đây học, anh đến gặp em mỗi ngày <span class="heart-symbol">❤️</span><br><br>
+                        Nếu em mệt, hãy nhớ luôn có anh bên cạnh người luôn dành hết sự dịu dàng cho em.<br><br>
                         Anh muốn chúng ta cùng bước tiếp mọi ngày.
                     </div>
                 </div>
@@ -563,7 +600,7 @@
                     <h2 class="form-title">💌 Lời nhắn của em</h2>
                     <textarea class="message-input" id="messageInput" placeholder="Em muốn nói gì với anh? ..."></textarea>
                     <button class="send-btn" id="sendBtn">GỬI</button>
-                    <div class="success-message" id="successMessage">Đã gửi thành công!</div>
+                    <div class="success-message" id="successMessage">Anh nhận được òi!</div>
                 </div>
             </div>
 
@@ -573,11 +610,11 @@
                     <h2 class="big-love-text" style="font-size: 1.8rem;">💝 Câu hỏi cho em</h2>
                     <div class="questions-container">
                         <div class="question-item">
-                            <p>1. Khoảnh khắc nào khiến em quyết định tiến tới với anh?</p>
+                            <p>1. Khoảnh khắc nào khiến em quyết định yêu anh?</p>
                             <textarea id="answer1" placeholder="Câu trả lời..."></textarea>
                         </div>
                         <div class="question-item">
-                            <p>2. Khoảng thời gian nào em thấy yêu anh nhất?</p>
+                            <p>2. Khoảng thời gian nào em thấy mình yêu anh nhất, chỉ cần thấy anh là em vui ý</p>
                             <textarea id="answer2" placeholder="Câu trả lời..."></textarea>
                         </div>
                         <div class="question-item">
@@ -589,7 +626,7 @@
                             <textarea id="answer4" placeholder="Câu trả lời..."></textarea>
                         </div>
                         <div class="question-item">
-                            <p>5. Em nghĩ sao về quy tắc "cả 2 đồng ý mới chia tay"?</p>
+                            <p>5. Anh muốn 2 ta có 1 quy tắc gì đó kiểu " khi cả 2 đồng ý mới ctay"(vd thôi nha chứ anh k muốn kiểu vậy)</p>
                             <textarea id="answer5" placeholder="Câu trả lời..."></textarea>
                         </div>
                         <div class="question-item">
@@ -597,7 +634,7 @@
                             <textarea id="answer6" placeholder="Câu trả lời..."></textarea>
                         </div>
                     </div>
-                    <button class="send-btn" id="sendAnswersBtn" style="margin-top: 10px;">GỬI LỜI ĐÁP</button>
+                    <button class="send-btn" id="sendAnswersBtn">GỬI LỜI ĐÁP</button>
                     <div class="success-message" id="answersSuccessMessage">Đã gửi thành công!</div>
                 </div>
             </div>
@@ -620,7 +657,7 @@
             <div class="page-indicator" id="pageIndicator">1/7</div>
             <button class="nav-btn" id="nextPageBtn">▶</button>
         </div>
-        <div class="footer-quote">"Mỗi ngày đều là Valentine"</div>
+        <div class="footer-quote">Mỗi ngày đều là Valentine</div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -661,7 +698,7 @@
             const countdownElement = document.getElementById('countdown2');
 
             countdownInterval = setInterval(() => {
-                countdownElement.innerHTML = `🌷 Chuyển sau: ${countdown}s 🌷`;
+                countdownElement.innerHTML = `🌷 ${countdown}s 🌷`;
                 countdown--;
                 if (countdown < 0) {
                     clearInterval(countdownInterval);
@@ -692,7 +729,7 @@
         function sendEmail() {
             const message = document.getElementById('messageInput').value.trim();
             if (!message) {
-                alert('Nhập lời nhắn nhé!');
+                alert('💝 Nhập lời nhắn nhé!');
                 return;
             }
 
@@ -721,7 +758,7 @@
             for (let i = 1; i <= 6; i++) {
                 const answer = document.getElementById(`answer${i}`)?.value.trim();
                 if (!answer) {
-                    alert('Trả lời hết câu hỏi nhé!');
+                    alert('💝 Trả lời hết câu hỏi nhé!');
                     return;
                 }
                 answers.push(answer);
